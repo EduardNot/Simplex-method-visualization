@@ -29,8 +29,8 @@ def pivot_step(tableau):
     ratios = [x[-1] / x[pivot_col] if x[pivot_col] else inf for x in constraints]
     pivot_row = np.argmin([inf if ratio <= 0 else ratio for ratio in ratios])
 
-    #print('Ratios:', ratios)
-    #print(f'Pivot col: {pivot_col}, pivot row: {pivot_row}\n')
+    # print('Ratios:', ratios)
+    # print(f'Pivot col: {pivot_col}, pivot row: {pivot_row}\n')
 
     new_tableau = [[] for _ in tableau]
     new_tableau[pivot_row] = np.array(tableau[pivot_row]) / tableau[pivot_row][pivot_col]
@@ -100,6 +100,6 @@ def daa_ex3():
     return c, A, b
 
 
-#simplex(*daa_ex1())
-#simplex(*daa_ex2())
+# simplex(*daa_ex1())
+# simplex(*daa_ex2())
 simplex(*daa_ex3())
